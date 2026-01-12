@@ -1,0 +1,22 @@
+window.FONT_LIST = [
+  "Inter",
+  "Roboto",
+  "Poppins",
+  "Montserrat",
+  "Nunito",
+  "DM Sans",
+  "Playfair Display",
+  "Exo 2",
+  "Orbitron",
+  "Rubik",
+  "Raleway",
+  "Source Sans 3",
+  "Titillium Web",
+  "Rajdhani",
+  "Fira Sans",
+  "Mulish",
+  "Work Sans",
+  "Archivo",
+  "Kanit",
+  "Manrope"
+];
