@@ -1,0 +1,83 @@
+/* =========================
+   GLOBAL PERFORMANCE TUNING
+========================= */
+html, body {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   CANVAS & VISUALIZER SCALE
+========================= */
+.canvas-container {
+  --viz-scale: 1;
+}
+
+#mainCanvas {
+  transform: scale(var(--viz-scale));
+  transform-origin: center center;
+}
+
+/* =========================
+   SMOOTH CONTROLS (8K SAFE)
+========================= */
+input[type="range"] {
+  transition: background 0.2s linear;
+}
+
+select, input, button {
+  transition: all 0.25s ease;
+}
+
+/* =========================
+   CAPTIONS SYSTEM
+========================= */
+.caption-layer {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  z-index: 50;
+}
+
+.caption-text {
+  font-size: 32px;
+  font-family: var(--caption-font, Inter);
+  color: var(--caption-color, #ffffff);
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: var(--caption-radius, 8px);
+  background: rgba(0,0,0,0.3);
+  border: 2px solid var(--caption-border, #ffffff);
+  box-shadow:
+    0 0 var(--caption-glow, 20px) var(--caption-glow-color, #00ffff),
+    0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   CAPTION POSITION CONTROL
+========================= */
+.caption-layer[data-x] {
+  left: calc(50% + attr(data-x px));
+}
+
+.caption-layer[data-y] {
+  bottom: calc(8% + attr(data-y px));
+}
+
+/* =========================
+   LOGO MOVEMENT
+========================= */
+.logo-overlay {
+  transition: transform 0.2s linear;
+}
+
+/* =========================
+   PARTICLE OPTIMIZATION
+========================= */
+.particle {
+  will-change: transform, opacity;
+  filter: blur(0.2px);
+}
